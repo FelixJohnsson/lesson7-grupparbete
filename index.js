@@ -35,12 +35,12 @@ class Customer {
         }
         return status
     }
-    getDiscount(pricePerCup) {
+    getDiscount(currentTotal) {
         let discount = 1
 
-        if(this.getTotalSpent() + pricePerCup >= this.smallDiscountThreshold && this.getTotalSpent() + pricePerCup < this.largeDiscountThreshold) {
+        if(this.getTotalSpent() + currentTotal >= this.smallDiscountThreshold && this.getTotalSpent() + currentTotal < this.largeDiscountThreshold) {
             discount = 0.9
-        } else if(this.getTotalSpent() + pricePerCup >= this.largeDiscountThreshold) {
+        } else if(this.getTotalSpent() + currentTotal >= this.largeDiscountThreshold) {
             discount = 0.85
         }
         return discount
